@@ -1,26 +1,62 @@
+import { Dialog, DialogPanel } from '@headlessui/react'
+import { useState } from 'react'
+
 function getImgUrl(name: string) {
   return new URL(`./assets/${name}.svg`, import.meta.url).href
 }
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <>
-      <nav className="w-full" data-headlessui-state="">
-        <div className="w-full h-20 flex justify-between items-center px-4 sm:px-8 text-white">
+      <nav className="w-full top-0 z-50 bg-[#242424]">
+        <div className="h-16 flex justify-between items-center px-4 sm:px-8 text-white">
           <h1 className="text-2xl sm:text-3xl font-bold text-[#afffe6]">Naheshi.</h1>
           <div className="hidden sm:flex space-x-4">
-            <div className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white">about</div>
-            <div className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white">portfolio</div>
-            <div className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white">contact</div>
+            <a className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#about">about</a>
+            <a className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#portfolio">portfolio</a>
+            <a className="uppercase text-lg font-semibold leading-6 p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#contact">contact</a>
           </div>
-          <div className="sm:hidden">
-            <button className="text-white hover:text-green-300" id="headlessui-disclosure-button-:r0:" type="button" aria-expanded="false" data-headlessui-state="">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" className="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6 text-white"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
             </button>
           </div>
+          <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
+            <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#242424] px-4 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div className="flex justify-between">
+                <h1 className="text-2xl sm:text-3xl font-bold text-[#afffe6]">Naheshi.</h1>
+                <button type="button"className="-m-2.5 rounded-md p-2.5" onClick={() => setMobileMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div className="mt-6 flow-root">
+                <div className="-my-6 space-y-2 py-6 text-center">
+                  <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 uppercase p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#about">about</a>
+                  <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 uppercase p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#portfolio">portfolio</a>
+                  <a className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 uppercase p-4 transition hover:text-green-200 hover:delay-150 text-white" href="#contact">contact</a>
+                </div>
+              </div>
+            </DialogPanel>
+          </Dialog>
         </div>
-      </nav>
-      <main>
+      </nav >
+      <main className="relative">
         <section id="about">
           <div className="flex flex-row items-center justify-center mt-10">
             <img src="https://avatars.githubusercontent.com/u/25316009?v=4" alt="Naheshi ICON" className="rounded object-contain h-20 w-20 me-5" />
