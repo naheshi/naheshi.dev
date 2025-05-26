@@ -1,4 +1,4 @@
-import { AlarmClock, BriefcaseBusiness, Brush, Earth, Home, Mailbox, Pin, Plus, PlusIcon, Star, User } from "lucide-react";
+import { AlarmClock, BriefcaseBusiness, Brush, Earth, Home, Mailbox, Pin, Plus, Star, User } from "lucide-react";
 import { SiGithub, SiJavascript, SiReact, SiNodedotjs, SiTypescript, SiBun, SiSpring, SiExpress, SiPython, SiVuedotjs, SiTailwindcss, SiNextdotjs } from '@icons-pack/react-simple-icons';
 import Image from "next/image";
 import { Marquee } from "./magicui/marquee";
@@ -73,7 +73,7 @@ export function Profile() {
                         <h1 className="text-2xl font-bold text-primary">Naheshi</h1>
                         <div className="font-semibold text-gray-400">
                             <div className="flex flex-col gap-1 md:flex-row md:items-center">
-                                I'm a <span className="font-bold text-primary">Full Stack Developer</span>
+                                I&apos;m a <span className="font-bold text-primary">Full Stack Developer</span>
                             </div>
                         </div>
                     </div>
