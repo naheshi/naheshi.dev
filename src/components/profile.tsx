@@ -113,9 +113,9 @@ export function Profile() {
             </div>
             <div className="flex flex-col">
                 <div className="flex flex-col space-y-1.5 p-6 max-h-50 bg-[#0f0f10] border rounded-lg shadow-sm">
-                    <h3 className="text-2xl font-semibold leading-none tracking-tight flex flex-row items-center gap-1">My Tech Stack</h3>
+                    <h3 className="text-2xl font-semibold leading-none tracking-tight flex flex-row gap-1">My Tech Stack</h3>
                     <p className="text-sm text-muted-foreground">My favorite tech stack I use on my projects</p>
-                    <div className="relative flex max-w-[50vh] flex-col items-center justify-center overflow-hidden">
+                    <div className="relative flex flex-col items-start justify-center max-w-[50vh] w-full mx-auto overflow-hidden">
                         <Marquee pauseOnHover className="[--duration:35s]">
                             {firstRow.map((item) => {
                                 const Icon = item.icon;
@@ -127,6 +127,7 @@ export function Profile() {
                                 );
                             })}
                         </Marquee>
+
                         <Marquee pauseOnHover className="[--duration:35s]">
                             {secondRow.map((item) => {
                                 const Icon = item.icon;
@@ -138,10 +139,12 @@ export function Profile() {
                                 );
                             })}
                         </Marquee>
-                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#0f0f10] to-transparent"></div>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#0f0f10] to-transparent"></div>
                     </div>
                 </div>
+
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:auto-rows-min">
                     <div className="min-h-[120px] rounded-lg bg-[#0f0f10] bg-secondary/40 p-6 shadow-sm transition hover:scale-105 flex flex-col justify-between border gap-3 items-center">
                         <div className="flex flex-col">
