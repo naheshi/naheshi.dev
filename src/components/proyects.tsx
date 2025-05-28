@@ -27,7 +27,7 @@ const items = [
     {
         name: "Portfolio",
         description: "Naheshi's portfolio",
-        img: "/portfolio.png",
+        img: "/Portfolio.png",
         href: "/proyect/portfolio",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
