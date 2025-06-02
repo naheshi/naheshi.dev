@@ -1,8 +1,10 @@
+'use client'
+
 import { AlarmClock, BriefcaseBusiness, Brush, Earth, Home, Mailbox, Pin, Plus, Star, User } from "lucide-react";
 import { SiGithub, SiJavascript, SiReact, SiNodedotjs, SiTypescript, SiBun, SiSpring, SiExpress, SiPython, SiVuedotjs, SiTailwindcss, SiNextdotjs } from '@icons-pack/react-simple-icons';
 import Image from "next/image";
 import { Marquee } from "./magicui/marquee";
-
+import ToggleCard from "./portui/ToggleCard";
 
 const mytechs = [
     {
@@ -101,14 +103,14 @@ export function Profile() {
                     </div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
-                    <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full gap-1">
+                    <a href="#" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full gap-1">
                         <Mailbox className="iconify iconify--solar size-6" />
                         Hire Me
-                    </button>
-                    <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2 w-full gap-2">
+                    </a>
+                    <a href="https://github.com/naheshi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2 w-full gap-2">
                         <SiGithub className="iconify iconify--mdi size-7" />
                         GitHub
-                    </button>
+                    </a>
                 </div>
             </div>
             <div className="flex flex-col">
@@ -146,7 +148,7 @@ export function Profile() {
                 </div>
 
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:auto-rows-min">
-                    <div className="min-h-[120px] rounded-lg bg-[#0f0f10] bg-secondary/40 p-6 shadow-sm transition hover:scale-105 flex flex-col justify-between border gap-3 items-center">
+                    <ToggleCard>
                         <div className="flex flex-col">
                             <span className="bg-gradient-to-b from-white to-gray-800 bg-clip-text font-mono text-4xl text-transparent md:text-5xl flex items-center gap-1">
                                 19 <Plus className="iconify iconify--mingcute size-6 text-primary md:size-8" />
@@ -156,8 +158,9 @@ export function Profile() {
                             <BriefcaseBusiness className="iconify iconify--solar size-6 text-primary" />
                             <span className="text-sm font-semibold text-gray-400">Projects</span>
                         </div>
-                    </div>
-                    <div className="min-h-[120px] rounded-lg bg-[#0f0f10] bg-secondary/40 p-6 shadow-sm transition hover:scale-105 flex flex-col justify-between border gap-3 items-center">
+                    </ToggleCard>
+
+                    <ToggleCard>
                         <div className="flex flex-col">
                             <span className="bg-gradient-to-b from-white to-gray-800 bg-clip-text font-mono text-4xl text-transparent md:text-5xl flex items-center gap-1">
                                 4 <Plus className="iconify iconify--mingcute size-6 text-primary md:size-8" />
@@ -167,8 +170,9 @@ export function Profile() {
                             <User className="iconify iconify--solar size-6 text-primary" />
                             <span className="text-sm font-semibold text-gray-400">Clients</span>
                         </div>
-                    </div>
-                    <div className="min-h-[140px] rounded-lg bg-[#0f0f10] bg-secondary/40 p-6 shadow-sm transition hover:scale-105 flex flex-col justify-between border gap-3 col-span-2 sm:col-span-1 items-center">
+                    </ToggleCard>
+
+                    <ToggleCard className="col-span-2 sm:col-span-1 min-h-[140px]">
                         <div className="flex flex-col">
                             <span className="bg-gradient-to-b from-white to-gray-800 bg-clip-text font-mono text-4xl text-transparent md:text-5xl flex items-center gap-1">
                                 3 <Plus className="iconify iconify--mingcute size-6 text-primary md:size-8" />
@@ -178,7 +182,7 @@ export function Profile() {
                             <Star className="iconify iconify--solar size-6 text-primary" />
                             <span className="text-sm font-semibold text-gray-400">Yrs Expertise</span>
                         </div>
-                    </div>
+                    </ToggleCard>
                 </div>
             </div>
         </div>
